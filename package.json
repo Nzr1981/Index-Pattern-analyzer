@@ -10,9 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
-    "react-router-dom": "^7.18.1"
+    "react-router-dom": "^7.18.2",
+    "yahoo-finance2": "^4.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
