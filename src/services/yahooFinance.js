@@ -1,5 +1,5 @@
 export async function getIndexData(indexName, date) {
-  const url = `http://localhost:3001/api/index?indexName=${encodeURIComponent(indexName)}&date=${date}`;
+  const url = `/api/index?indexName=${encodeURIComponent(indexName)}&date=${date}`;
 
   console.log("Fetching:", url);
 
