@@ -1,0 +1,2 @@
+- [sql.js for SQLite](sqljs-db.md) — use sql.js (WebAssembly) instead of better-sqlite3; native build fails on Replit Node 20
+- [Day 1 data layer](day1-architecture.md) — db.js/dataSync.js/server.js architecture, transaction pattern, sync strategy

@@ -1,0 +1,259 @@
+INDEX GAME ANALYZER - DAY 1
+
+Foundation, Data Collection & Database
+
+You are continuing development of the existing Index Game Analyzer project. Do not rewrite or remove existing working features. Extend the project while keeping all current functionality intact.
+
+Primary Goal
+
+Create a solid foundation for the application by implementing automatic market data collection, database management, and historical data storage.
+
+Do NOT implement the prediction engine in this stage.
+
+---
+
+Supported Indexes
+
+The application must support:
+
+- Taiwan
+- Kospi
+- Hang Seng
+- Sensex
+- DAX
+- Dow Jones
+
+The system must be modular so additional indexes can be added later.
+
+---
+
+Automatic Market Data
+
+The application must automatically fetch market data from Yahoo Finance.
+
+For every trading day collect:
+
+- Date
+- Day
+- Index Name
+- Open Price
+- Close Price
+- Last two digits of Open
+- Last two digits of Close
+- Before Decimal (B4 Decimal) digit
+- Market Status
+- Market Closing Time
+
+The user must not manually enter this market data.
+
+---
+
+Historical Data
+
+Automatically download at least one year of historical data for every supported index.
+
+The system must:
+
+- Store historical records locally.
+- Prevent duplicate records.
+- Update only missing dates.
+- Keep historical data permanently.
+- Allow future expansion to multiple years.
+
+---
+
+Database Design
+
+Create separate storage for:
+
+Daily Data
+
+Store:
+
+- Date
+- Day
+- Index
+- Open
+- Close
+- B4 Decimal
+- Timestamp
+- Data Source
+
+---
+
+Weekly Data
+
+Automatically organize daily data into weekly records.
+
+Provide weekly summaries for every index.
+
+---
+
+Market Information
+
+Store:
+
+- Index name
+- Yahoo Finance symbol
+- Market timezone
+- Market opening time
+- Market closing time
+- Last update time
+
+---
+
+Settings
+
+Store:
+
+- Auto Update enabled
+- Last synchronization time
+- Preferred timezone
+- Refresh interval
+
+---
+
+Automatic Synchronization
+
+When the application starts:
+
+- Check Yahoo Finance.
+- Download missing historical records.
+- Update today's data when markets close.
+- Skip existing records.
+- Never create duplicates.
+
+Provide a manual Refresh Data button that forces synchronization.
+
+---
+
+Data Validation
+
+Validate all downloaded data.
+
+Check:
+
+- Missing values
+- Invalid dates
+- Duplicate records
+- Corrupted records
+- Invalid Open/Close values
+
+If a problem is found:
+
+- Retry download.
+- Log the error.
+- Continue processing remaining records.
+
+---
+
+Dashboard
+
+Create or improve the Dashboard to display:
+
+- Last update time
+- Number of historical records
+- Number of indexes
+- Market status (Open/Closed)
+- Data synchronization status
+- Auto-update status
+
+Do not display prediction results yet.
+
+---
+
+Data Tables
+
+Create pages for:
+
+Daily Data
+
+Display:
+
+- Date
+- Day
+- Index
+- Open
+- B4 Decimal
+- Close
+
+Allow:
+
+- Search
+- Filter
+- Sort
+- Pagination
+
+---
+
+Weekly Data
+
+Display:
+
+Weekly summaries grouped by index.
+
+Allow:
+
+- Index selection
+- Week selection
+- Search
+- Filter
+
+---
+
+Performance
+
+Optimize for:
+
+- Fast loading
+- Efficient storage
+- Background synchronization
+- Minimum API requests
+- Cached historical data
+- No duplicate downloads
+
+---
+
+Error Handling
+
+Handle:
+
+- Internet unavailable
+- Yahoo Finance unavailable
+- Partial downloads
+- Invalid responses
+- API changes
+
+The application should never crash because of download failures.
+
+---
+
+Code Quality
+
+- Keep the project modular.
+- Use reusable services.
+- Separate data fetching from UI.
+- Separate storage from business logic.
+- Keep components small and maintainable.
+
+---
+
+Important Instructions
+
+- Do NOT build the prediction engine.
+- Do NOT implement combinations.
+- Do NOT implement opposite numbers.
+- Do NOT implement variant generation.
+- Do NOT implement AI learning.
+
+Those features will be implemented in later stages.
+
+Focus only on creating a reliable data foundation that all future prediction features will use.
+
+Before completing this stage:
+
+1. Verify that automatic Yahoo Finance data fetching works.
+2. Verify that historical data is stored correctly.
+3. Verify that Daily Data and Weekly Data pages display accurate information.
+4. Ensure no existing functionality has been broken.
+5. Fix any errors before considering Day 1 complete.
