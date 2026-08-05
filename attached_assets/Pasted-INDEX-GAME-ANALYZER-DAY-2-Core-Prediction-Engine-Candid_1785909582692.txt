@@ -1,0 +1,376 @@
+INDEX GAME ANALYZER – DAY 2
+
+Core Prediction Engine (Candidate Generation)
+
+Continue the existing project without removing or changing any working functionality from Day 1.
+
+The objective of this stage is to build the Prediction Generation Engine. This engine must generate every possible predicted Close Number using historical market data. Do NOT implement AI learning, confidence scoring, or ranking in this stage.
+
+---
+
+Primary Objective
+
+The prediction engine must generate candidate Close Numbers using all available historical relationships before any ranking or filtering occurs.
+
+Every generated candidate must be stored with complete information about how and why it was generated.
+
+---
+
+Data Sources
+
+Generate predictions using:
+
+- Today's Open
+- Today's B4 Decimal
+- Previous Day Open
+- Previous Day Close
+- Previous Day B4 Decimal
+- Previous Week
+- Daily Data
+- Weekly Data
+- Taiwan
+- Kospi
+- Hang Seng
+- Sensex
+- DAX
+- Dow Jones
+
+Every index must be analyzed independently and together.
+
+---
+
+Opposite Number Engine
+
+Generate opposite digits using:
+
+1 ↔ 6
+
+2 ↔ 7
+
+3 ↔ 8
+
+4 ↔ 9
+
+5 ↔ 0
+
+Whenever any digit appears in Open, Close or B4 Decimal, automatically generate its opposite digit and include those combinations.
+
+Example:
+
+18
+
+Generate:
+
+18
+
+68
+
+13
+
+63
+
+16
+
+61
+
+83
+
+38
+
+etc.
+
+Store every generated candidate.
+
+---
+
+Mirror Number Engine
+
+Generate mirrored numbers.
+
+Examples:
+
+12 → 21
+
+38 → 83
+
+47 → 74
+
+90 → 09
+
+Store all mirror combinations.
+
+---
+
+Reverse Number Engine
+
+Reverse every generated number.
+
+Example:
+
+52
+
+25
+
+81
+
+18
+
+04
+
+40
+
+Store every reverse candidate.
+
+---
+
+Combination Engine
+
+Build every possible two-digit combination from:
+
+Today's Open
+
+Today's B4 Decimal
+
+Previous Day Open
+
+Previous Day Close
+
+Previous Day B4 Decimal
+
+Current Index
+
+Cross Index values
+
+Generate combinations using:
+
+First digit
+
+Second digit
+
+Mixed digits
+
+Cross combinations
+
+Reversed combinations
+
+Opposite combinations
+
+Mirror combinations
+
+Do not discard any candidate.
+
+---
+
+Cross Index Combination Engine
+
+Generate combinations between different indexes.
+
+Examples:
+
+Taiwan Open + Kospi Close
+
+Taiwan Open + DAX Close
+
+Hang Seng Open + Sensex Close
+
+Dow Jones Close + Taiwan Open
+
+Previous Day Taiwan + Today's DAX
+
+Previous Week Sensex + Today's Hang Seng
+
+Search every possible cross-index relationship.
+
+---
+
+Historical Search
+
+For every generated candidate:
+
+Search the complete historical database.
+
+Calculate:
+
+Number of occurrences
+
+First occurrence
+
+Last occurrence
+
+Repeat frequency
+
+Days between occurrences
+
+Weekly occurrences
+
+Monthly occurrences
+
+Cross-index occurrences
+
+Store every result.
+
+---
+
+Candidate Database
+
+Every generated candidate must contain:
+
+Predicted Number
+
+Generation Method
+
+Source Values
+
+Index
+
+Historical Occurrence Count
+
+Dates Found
+
+Matching Records
+
+Generation Timestamp
+
+No ranking yet.
+
+---
+
+Formula Tracking
+
+For every candidate record:
+
+Store:
+
+Formula ID
+
+Generation Rule
+
+Input Values
+
+Output Number
+
+Historical Matches
+
+This will be used by the AI Learning Engine later.
+
+---
+
+Pattern Preparation
+
+Detect and record simple relationships, including:
+
+Open → Close
+
+Close → Open
+
+Open → B4 Decimal
+
+B4 Decimal → Close
+
+Previous Day → Today
+
+Previous Week → Today
+
+Cross Index
+
+Mirror
+
+Reverse
+
+Opposite
+
+Do NOT calculate confidence yet.
+
+Only store the discovered relationships.
+
+---
+
+Candidate Display
+
+Create a developer/debug page showing:
+
+Generated Number
+
+Source
+
+Generation Rule
+
+Index
+
+Historical Matches
+
+First Seen
+
+Last Seen
+
+Allow filtering by:
+
+Index
+
+Generation Rule
+
+Date
+
+Candidate Number
+
+This page is for verification only and is not part of the final user interface.
+
+---
+
+Performance
+
+Avoid duplicate candidate generation.
+
+Reuse cached historical data.
+
+Generate candidates efficiently.
+
+Keep processing modular for future AI learning.
+
+---
+
+Code Quality
+
+Separate the engine into reusable modules such as:
+
+- Combination Generator
+- Opposite Number Generator
+- Mirror Generator
+- Reverse Generator
+- Cross Index Generator
+- Historical Search Service
+- Candidate Storage Service
+
+The code must be easy to extend in later stages.
+
+---
+
+Do NOT Implement Yet
+
+Do not implement:
+
+- Confidence scores
+- AI learning
+- Pattern weighting
+- Formula weighting
+- Prediction ranking
+- Top 8 / Top 16 prediction lists
+- Explainable AI reports
+
+Those features will be implemented in later stages.
+
+---
+
+Completion Checklist
+
+Before completing Day 2, verify:
+
+1. Every supported index generates prediction candidates.
+2. Opposite number generation works correctly.
+3. Mirror generation works correctly.
+4. Reverse generation works correctly.
+5. Cross-index combinations are generated.
+6. Every candidate is searched against historical data.
+7. Every candidate is stored with complete generation details.
+8. No existing Day 1 functionality is broken.
+9. Fix all errors before moving to Day 3.
